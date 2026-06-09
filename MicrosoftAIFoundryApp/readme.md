@@ -1,4 +1,4 @@
-# Technician AI Assistant
+# Microsoft Foundry AI App
 
 ![Application Screenshot](images/app-screenshot.png)
 
