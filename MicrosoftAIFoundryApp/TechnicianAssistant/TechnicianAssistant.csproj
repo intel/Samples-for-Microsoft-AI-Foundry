@@ -1,0 +1,90 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net9.0-windows10.0.26100</TargetFramework>
+    <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
+    <RootNamespace>TechnicianAssistant</RootNamespace>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <Platforms>x86;x64;ARM64</Platforms>
+    <RuntimeIdentifiers>win-x86;win-x64;win-arm64</RuntimeIdentifiers>
+    <UseWinUI>true</UseWinUI>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <!-- MainPage.xaml registered as Page by default SDK glob -->
+
+  <ItemGroup>
+    <Manifest Include="$(ApplicationManifest)" />
+  </ItemGroup>
+
+  <!-- Copy vec0.dll extension to output directory -->
+  <ItemGroup>
+    <None Update="vec0.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <!-- Copy Whisper model files -->
+  <ItemGroup>
+    <None Update="whisper-large-v3-onnx\**\*">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <!-- Copy Embedding model files -->
+  <ItemGroup>
+    <None Update="all-MiniLM-L6-v2\**\*">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <!-- Copy Manuals directory -->
+  <ItemGroup>
+    <None Update="Manuals\**\*">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <!-- Copy vector database -->
+  <ItemGroup>
+    <None Update="manuals.db">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+	<PackageReference Include="Microsoft.ML.Tokenizers.Data.Cl100kBase" Version="2.0.0" />
+    <PackageReference Include="AWSSDK.BedrockRuntime" Version="4.0.17.6" />
+    <PackageReference Include="Microsoft.WindowsAppSDK" Version="2.0.0-experimental7" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="9.0.15" />
+	<PackageReference Include="FastBertTokenizer" Version="1.1.30-alpha" />
+	<PackageReference Include="NLog" Version="6.1.2" />
+	<PackageReference Include="NLog.Extensions.Logging" Version="6.1.2" />
+	<PackageReference Include="OpenAI" Version="2.1.0" />
+	<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.15" />
+	<PackageReference Include="System.Text.Json" Version="10.0.3" />
+	<PackageReference Include="Microsoft.AI.Foundry.Local.WinML" Version="1.2.0" />
+	<PackageReference Include="ModelContextProtocol" Version="0.9.0-preview.2" />
+	<PackageReference Include="Microsoft.ML.Tokenizers" Version="2.0.0" />
+	<PackageReference Include="NAudio" Version="2.2.1" />
+	<PackageReference Include="Microsoft.ML.OnnxRuntime" Version="1.20.1" />
+	<PackageReference Include="Microsoft.ML.OnnxRuntimeGenAI" Version="0.6.0" />
+	<PackageReference Include="Microsoft.Data.Sqlite" Version="9.0.1" />
+	<PackageReference Include="Microsoft.Bcl.Memory" Version="10.0.4" />
+	  
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Dialogs\" />
+  </ItemGroup>
+
+    <!-- Publish Properties -->
+  <PropertyGroup>
+    <PublishReadyToRun Condition="'$(Configuration)' == 'Debug'">False</PublishReadyToRun>
+    <PublishReadyToRun Condition="'$(Configuration)' != 'Debug'">True</PublishReadyToRun>
+    <PublishTrimmed Condition="'$(Configuration)' == 'Debug'">False</PublishTrimmed>
+    <PublishTrimmed Condition="'$(Configuration)' != 'Debug'">True</PublishTrimmed>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,6 @@
+@TechnicianAssistant.McpServer_HostAddress = http://localhost:5171
+
+GET {{TechnicianAssistant.McpServer_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

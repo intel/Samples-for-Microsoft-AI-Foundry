@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "TechnicianAssistant": {
+      "commandName": "Project",
+      "commandLineArgs": "--model qwen2.5-coder-14b-instruct-openvino-gpu:2"
+    }
+  }
+}

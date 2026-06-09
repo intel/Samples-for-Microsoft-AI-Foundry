@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "TechnicianAssistant (Package)": {
+      "commandName": "MsixPackage",
+      "commandLineArgs": "--model phi-4-openvino-gpu:2"
+    }
+  }
+}
