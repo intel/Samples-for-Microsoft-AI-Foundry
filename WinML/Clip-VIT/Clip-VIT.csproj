@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	  <OutputType>Exe</OutputType>
+	  <TargetFramework>net9.0-windows10.0.26100.0</TargetFramework>
+	  <ImplicitUsings>enable</ImplicitUsings>
+	  <Nullable>enable</Nullable>
+	  <Platforms>x64</Platforms>
+	  <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+	  <WindowsPackageType>None</WindowsPackageType>
+	  <WindowsAppSdkBootstrapInitialize>true</WindowsAppSdkBootstrapInitialize>
+  </PropertyGroup>
+
+	<ItemGroup>
+		<Content Include="imagedesc.txt" CopyToOutputDirectory="PreserveNewest" />
+		<Content Include="merges.txt" CopyToOutputDirectory="PreserveNewest" />
+		<Content Include="vocab.json" CopyToOutputDirectory="PreserveNewest" />
+		<Content Include="openvino_model_quant_st.bin" CopyToOutputDirectory="PreserveNewest" />
+		<Content Include="openvino_model_quant_st.onnx" CopyToOutputDirectory="PreserveNewest" />
+		<Content Include="openvino_model_quant_st.xml" CopyToOutputDirectory="PreserveNewest" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.WindowsAppSDK" />
+		<PackageReference Include="Microsoft.ML.Tokenizers" />
+		<PackageReference Include="Microsoft.ML.Tokenizers.Data.O200kBase" />
+		<PackageReference Include="System.Numerics.Tensors" />
+	</ItemGroup>
+
+</Project>
+
+
+
