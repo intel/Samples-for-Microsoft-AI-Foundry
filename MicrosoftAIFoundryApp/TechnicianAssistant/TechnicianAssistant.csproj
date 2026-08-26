@@ -56,9 +56,9 @@
 
   <ItemGroup>
 	<PackageReference Include="Microsoft.ML.Tokenizers.Data.Cl100kBase" Version="2.0.0" />
-    <PackageReference Include="AWSSDK.BedrockRuntime" Version="4.0.17.6" />
-    <PackageReference Include="Microsoft.WindowsAppSDK" Version="2.0.0-experimental7" />
-    <PackageReference Include="Microsoft.Extensions.Logging" Version="9.0.15" />
+  <PackageReference Include="AWSSDK.BedrockRuntime" Version="4.0.17.6" />
+  <PackageReference Include="Microsoft.WindowsAppSDK" Version="2.0.0-experimental7" />
+  <PackageReference Include="Microsoft.Extensions.Logging" Version="9.0.15" />
 	<PackageReference Include="FastBertTokenizer" Version="1.1.30-alpha" />
 	<PackageReference Include="NLog" Version="6.1.2" />
 	<PackageReference Include="NLog.Extensions.Logging" Version="6.1.2" />
@@ -71,10 +71,11 @@
 	<PackageReference Include="NAudio" Version="2.2.1" />
 	<PackageReference Include="Microsoft.ML.OnnxRuntime" Version="1.20.1" />
 	<PackageReference Include="Microsoft.ML.OnnxRuntimeGenAI" Version="0.6.0" />
-	<PackageReference Include="Microsoft.Data.Sqlite" Version="9.0.1" />
+	<PackageReference Include="Microsoft.Data.Sqlite" Version="10.0.11" />
 	<PackageReference Include="Microsoft.Bcl.Memory" Version="10.0.4" />
-	  
-  </ItemGroup>
+	<PackageReference Include="SQLitePCLRaw.lib.e_sqlite3" Version="3.53.3" />
+ 
+</ItemGroup>
 
   <ItemGroup>
     <Folder Include="Dialogs\" />
